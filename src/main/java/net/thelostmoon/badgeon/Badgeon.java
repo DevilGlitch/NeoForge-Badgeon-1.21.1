@@ -1,11 +1,12 @@
 package net.thelostmoon.badgeon;
-
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
+import net.thelostmoon.badgeon.commands.BadgeCommands;
+import net.thelostmoon.badgeon.item.BadgeFoodHandler;
 import net.thelostmoon.badgeon.item.ModCreativeModeTab;
 import net.thelostmoon.badgeon.item.ModItems;
 import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,7 +20,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Badgeon.MODID)
 public class Badgeon {
     // Define mod id in a common place for everything to reference
@@ -62,7 +62,16 @@ public class Badgeon {
 
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+    @SubscribeEvent
+    public void onCommandsRegister(RegisterCommandsEvent event) {
+        BadgeCommands.register(event.getDispatcher());
+    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public void onFoodConsumed(LivingEntityUseItemEvent.Finish event) {
+        BadgeFoodHandler.handleBadgeConsumption(event.getItem(), event.getEntity().level(), event.getEntity());
+    }
+
     @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
