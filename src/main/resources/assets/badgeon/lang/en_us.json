@@ -1,3 +1,22 @@
 {
-  "item.badgeon.darkbadge": "Dark Badge"
+  "item.badgeon.darkbadge": "Dark Badge",
+  "item.badgeon.elecbadge": "Eletric Badge",
+  "item.badgeon.FireBadge": "Fire Badge",
+  "item.badgeon.FairyBadge": "Fairy Badge",
+  "item.badgeon.SteelBadge": "Steel Badge",
+  "item.badgeon.WaterBadge": "Water Badge",
+  "item.badgeon.FightBadge": "Fighting Badge",
+  "item.badgeon.FlyBadge": "Flying Badge",
+  "item.badgeon.BugBadge": "Bug Badge",
+  "item.badgeon.GroundBadge": "Ground Badge",
+  "item.badgeon.PoisonBadge": "Poison Badge",
+  "item.badgeon.RockBadge": "Rock Badge",
+  "item.badgeon.GhostBadge": "Ghost Badge",
+  "item.badgeon.GrassBadge": "Grass Badge",
+  "item.badgeon.PsychicBadge": "Psychic Badge",
+  "item.badgeon.IceBadge": "Ice Badge",
+  "item.badgeon.DragonBadge": "Dragon Badge",
+  "item.badgeon.NormalBadge": "Normal Badge",
+
+  "creativetab.badgeon.badgeon_items": "Badgeon Items"
 }
