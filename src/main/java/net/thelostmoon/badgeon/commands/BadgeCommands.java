@@ -17,7 +17,7 @@ public class BadgeCommands {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("badge")
-                .requires(source -> source.hasPermission(2))
+                .requires(source -> source.hasPermission(4))
                 .then(Commands.literal("view")
                         .then(Commands.argument("player", EntityArgument.player())
                                 .executes(context -> viewBadges(context.getSource(), EntityArgument.getPlayer(context, "player")))))

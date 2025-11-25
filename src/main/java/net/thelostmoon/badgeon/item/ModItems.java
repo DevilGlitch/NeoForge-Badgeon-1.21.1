@@ -14,6 +14,7 @@ public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Badgeon.MODID);
 
+    public static final DeferredItem<Item> BadgeHolder = ITEMS.register("badgeholder", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> DarkBadge = ITEMS.register("darkbadge", () -> new Item(new Item.Properties().food(ModFoodProperties.DarkBadge)));
     public static final DeferredItem<Item> ElecBadge = ITEMS.register("elecbadge", () -> new Item(new Item.Properties().food(ModFoodProperties.ElecBadge)));
     public static final DeferredItem<Item> FireBadge = ITEMS.register("firebadge", () -> new Item(new Item.Properties().food(ModFoodProperties.FireBadge)));

@@ -18,6 +18,7 @@ public class ModCreativeModeTab {
             // .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Badgeon.MODID, ">Previous tab name"))
             .title(Component.translatable("creativetab.badgeon.badgeon_items"))
             .displayItems((itemDisplayParameters, output) -> {
+                output.accept(ModItems.BadgeHolder.get());
                 output.accept(ModItems.DarkBadge.get());
                 output.accept(ModItems.ElecBadge.get());
                 output.accept(ModItems.FairyBadge.get());
